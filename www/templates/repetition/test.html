@@ -1,0 +1,30 @@
+<ion-view>
+<ion-content scroll="false">
+  <ion-slide-box  show-pager="false" ng-init="disableSwipe()"  active-slide="currentPointer" on-slide-changed="slideHasChanged($index)">
+    <ion-slide>
+          <div class="slide-fullscreen" ng-include src="'templates/repetition/intro.html'"></div>
+    </ion-slide>
+    <ion-slide detect-gestures >
+          <div class="slide-fullscreen" ng-include src="'templates/repetition/practice.html'"></div>
+    </ion-slide>
+    <ion-slide detect-gestures >
+          <div class="slide-fullscreen" ng-include src="'templates/repetition/practice.html'"></div>
+    </ion-slide>
+    <ion-slide>
+          <div on-tap="nextSlide()" on-swipe-left="nextSlide()" class="slide-fullscreen" ng-include src="'templates/test-begin.html'"></div>
+    </ion-slide>
+  <ion-slide detect-gestures ng-if="audioList" ng-repeat="audio in ::audioList">
+      <h3 class="test-counter" ng-class="greyCounter>6?'greybox':''">{{$index+1}}</h3>
+    <div class="centered-repetition" style="flex-direction:column;-webkit-flex-direction:column;">
+            <div class="ali-mid"><button class="button button-next icon-right"  ng-class="{'ion-play': !playing, 'ion-pause': playing}"
+            ng-click="play()" style="font-size:25px;">Play &nbsp;</button></div>
+            <div class="equalizer" ng-show="playing"><img src="images/audio_equalizer.gif"/></div>
+    </div>
+  </ion-slide>
+  <ion-slide>
+        <div ng-if="currentPointer>=30" on-tap="exit()" on-swipe="exit()" class="slide-fullscreen" ng-include src="'templates/test-end.html'"></div>
+  </ion-slide>
+</ion-slide-box>
+
+</ion-content>
+</ion-view>

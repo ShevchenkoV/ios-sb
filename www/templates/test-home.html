@@ -1,0 +1,30 @@
+<ion-view>
+<ion-content scroll="false">
+  <div class="header-reg">
+    <!--<button class="button icon-left ion-chevron-left button-clear" style="font-size: 25px;">Patient</button>-->
+    <h1>Test Assessment: {{user.name}}</h1>
+  </div>
+  <div class="pane-parent">
+    <div class="test-home-main-block">
+      <button class="button button-block icon-right button-next"
+       style="  padding: 10px 35px 10px 0px;  text-align: left;" ng-click="go('naming');">
+       <i class="icleft" padding-directive data-number="user.naming"></i>
+       Naming<i class="ion-arrow-right-a"></i></button>
+      <button class="button button-block icon-right button-next rep" style="  padding: 10px 35px 10px 0px; text-align: left;" ng-click="go('repetition');">
+        <i class="icleft" padding-directive data-number="user.repetition"></i>
+        Repetition<i class="ion-arrow-right-a"></i></button>
+      <button class="button button-block icon-right button-next word" style="  padding: 10px 35px 10px 0px;  text-align: left;" ng-click="go('word');">
+        <i class="icleft" padding-directive data-number="user.word"></i>
+        Word Comprehension<i class="ion-arrow-right-a"></i></button>
+      <button class="button button-block icon-right button-next sem" style="  padding: 10px 35px 10px 0px;  text-align: left;" ng-click="go('semantic');">
+        <i class="icleft" padding-directive data-number="user.semantic"></i>
+        Semantic Association<i class="ion-arrow-right-a"></i></button>
+    </div>
+    <div class=test-home-footer-block>
+      <button class="button button-block icon-right button-white" style="font-size: 25px;padding: 6px 30px;" ui-sref="/how-to-score">How to Score?</button>
+      <button class="button btn-small-left icon-right button-white" style="font-size: 25px;padding: 6px 30px;" ui-sref="/">Exit</button>
+      <button class="button btn-small-right icon-right button-white" style="font-size: 25px;padding: 6px 30px;" ui-sref="/activity-log">View Results</button>
+    </div>
+  </div>
+</ion-content>
+</ion-view>

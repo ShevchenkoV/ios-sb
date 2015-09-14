@@ -1,0 +1,124 @@
+<ion-view>
+<ion-content scroll="false">
+  <div class="header-reg">
+    <button class="button button-clear" ui-sref="/"><i class="ion-home" style="font-size: 40px;"></i></button>
+    <h1>How To Use This App?</h1>
+  </div>
+  <div class="howtouse_tebing_div">
+    <ul id="tabs" class="left_menu">
+        <li class="test_howtouse1">
+            <a href="#" name="#tab1" id="{{show==1?'current':'not-current'}}" >
+                <div class="tebing_butoon_div" ng-click="show=1">
+                    <div class="color"></div>
+                    <div class="text" style="padding-top: 18px;">Entering Test Administration Details</div>
+                </div>
+            </a>
+        </li>
+        <li class="test_howtouse2">
+            <a href="#" name="#tab2" id="{{show==2?'current':'not-current'}}" >
+                <div class="tebing_butoon_div"  ng-click="show=2">
+                    <div class="color red"></div>
+                    <div class="text">Completing Sub-tests</div>
+                </div>
+            </a></li>
+        <li class="test_howtouse3">
+            <a href="#" name="#tab3" id="{{show==3?'current':'not-current'}}" >
+                <div class="tebing_butoon_div" ng-click="show=3">
+                    <div class="tebing_butoon_div">
+                        <div class="color green"></div>
+                        <div class="text">Scoring Gestures</div>
+                    </div>
+                </div>
+            </a></li>
+        <li class="test_howtouse4">
+            <a href="#" name="#tab4" id="{{show==4?'current':'not-current'}}" >
+                <div class="tebing_butoon_div" ng-click="show=4">
+                    <div class="color blue"></div>
+                    <div class="text">Reviewing Responses</div>
+                </div>
+            </a></li>
+        <li class="test_howtouse5">
+            <a href="#" name="#tab5" id="{{show==5?'current':'not-current'}}" >
+                <div class="tebing_butoon_div" ng-click="show=5">
+                    <div class="color yellow"></div>
+                    <div class="text">Exporting Results</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="howtouse_color right-menu-content-scroll">
+        <div id="tab1" ng-if="show==1">
+            <div class="entering-test">
+                <h3>Entering test administration details</h3>
+                <p style="padding-bottom: 10px;">Begin by entering some basic details of the testing session, including:</p>
+                <p class="left_mar">An examinee or patient identifier - this may include numbers or letters.</p>
+                <p class="left_mar">Examinee DOB – using the calendar function.</p>
+                <p class="left_mar">Examiner initials.</p>
+                <p class="left_mar">Date of testing – using the calendar function.  This will default to the current date, but can be modified if required.</p>
+            </div>
+        </div>
+        <div id="tab2" ng-if="show==2">
+            <div class="entering-test">
+                <h3>Completing subtests</h3>
+                <p class="left_mar">When completing the SYDBAT, Naming is always administered first. In addition, Comprehension needs to be administered before Semantic Association. If possible, provide a delay (~15 min) between administering Naming and Comprehension tests.</p>
+                <p class="left_mar">Select each subtest by pressing the button relating to the name of the test. The administration script will appear.  After this page, place the iPad or tablet in front of the examinee to view the stimuli.</p>
+                <p class="left_mar">For the Naming and Repetition subtests, an audio recording commences for each item from the time the picture is displayed until the response is scored or the examiner advances the test to the next item [by swiping left with one finger].</p>
+                <p class="left_mar">For the Comprehension and Semantic Association subtests, the examinee indicates his/her answer by pressing on the corresponding picture.  This will produce a red box around the image and will expand the image in size, for the examinee to confirm the response. Once the examinee has indicated this is the final response, the examiner swipes left with one finger to continue.</p>
+            </div>
+        </div>
+        <div id="tab3" ng-if="show==3">
+            <div class="entering-test">
+                <h3>Scoring gestures</h3>
+                <p class="left_mar">To score a response as “correct”, perform a short swipe to the left of the screen using one finger.</p>
+                <p class="left_mar">To score a response as “incorrect”, perform a long swipe to the left of the screen using one finger.</p>
+                <p class="left_mar">To end the test once 6 consecutive errors are recorded (discontinue rule), swipe up or down on the screen using one finger.</p>
+                <p class="left_mar">To abort a test before completion, swipe up or down on the screen using two fingers.</p>
+                <p class="left_mar"></p>
+
+                <div class="row row-gesture">
+                  <div class="col col-20 col-img-gesture" style="padding-left:3%;"><img src="images/short-left.png"></div>
+                  <div class="col col-offset-20 col-center col-test-gesture" style="font-size:30px;">Correct, Score = 1</div>
+                </div>
+                <div class="row row-gesture">
+                  <div class="col col-20 col-img-gesture"><img src="images/long-left.png"></div>
+                  <div class="col col-offset-20 col-center col-test-gesture" style="font-size:30px;">Incorrect, Score = 0</div>
+                </div>
+                <div class="row row-gesture">
+                  <div class="col col-20 col-img-gesture"><img src="images/double-left.png"></div>
+                  <div class="col col-offset-20 col-center col-test-gesture" style="font-size:30px;">Review later, no Score</div>
+                </div>
+                <div class="row row-gesture">
+                  <div class="col col-20 col-img-gesture"><img src="images/up-down.png"></div>
+                  <div class="col col-offset-20 col-center col-test-gesture" style="font-size:30px;">Terminate Test (complete)</div>
+                </div>
+                <div class="row row-gesture">
+                  <div class="col col-20 col-img-gesture"><img src="images/double-up-down.png"></div>
+                  <div class="col col-offset-20 col-center col-test-gesture" style="font-size:30px;">Terminate Test (incomplete)</div>
+                </div>
+            </div>
+        </div>
+        <div id="tab4" ng-if="show==4">
+            <div class="entering-test">
+                <h3>Reviewing responses</h3>
+                <p class="left_mar">In some instances, it may be necessary to review a response before confirming the final score (e.g. on the Naming or Repetition subtests if a response is unclear and you wish to listen to the recording again before assigning a score). To do this, simply go to the View Activity Log.</p>
+                <p class="left_mar">Select the specific test needing review: listed by test name, ID and testing date.</p>
+                <p class="left_mar">Select the item you wish to review. This will open a new window that will allow you to change the score and add comments.</p>
+            </div>
+        </div>
+        <div id="tab5" ng-if="show==5">
+            <div class="entering-test">
+                <h3>Exporting results</h3>
+                <p class="left_mar">Once the test is completed and you wish to export the results:</p>
+                <p class="left_mar">Open ‘View Activity Log’ on the home screen.</p>
+                <p class="left_mar">Select the specific test for exporting: listed by test name, ID and testing date.</p>
+                <p class="left_mar">In the top right corner, select ‘export to email’.</p>
+                <p class="left_mar">Choose the preferred Email App from the list provided in the pop-up window.</p>
+                <p class="left_mar">Note: you may need to configure an email account with your tablet in order to export data via email.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</ion-content>
+</ion-view>

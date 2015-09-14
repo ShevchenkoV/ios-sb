@@ -1,0 +1,155 @@
+<ion-view>
+<ion-content scroll="false">
+  <div class="header-reg">
+    <button class="button button-clear" ui-sref="/"><i class="ion-home" style="font-size: 40px;"></i></button>
+    <h1 style="font-size: 3.125em;padding-right: 60px;">Administration and Scoring Instructions</h1>
+  </div>
+  <div class="administration_tebing_div">
+        <ul id="tabs" class="left_menu">
+            <li class="title">ADMINISTRATION</li>
+            <li class="test_howtouse1">
+              <a href="#" name="#tab1" id="{{show==1?'current':'not-current'}}" ng-click="show=1">
+                <div class="color"></div>
+                <div class="text">Naming</div>
+                </a>
+            </li>
+            <li class="test_howtouse2"><a href="#" name="#tab2" id="{{show==2?'current':'not-current'}}" ng-click="show=2">
+              <div class="color green"></div><div class="text">Repetition</div></a>
+              </li>
+            <li class="test_howtouse3"><a href="#" name="#tab3" id="{{show==3?'current':'not-current'}}" ng-click="show=3">
+              <div class="color blue"></div><div class="text">Word Comprehension</div></a>
+              </li>
+            <li class="test_howtouse4"><a href="#" name="#tab4" id="{{show==4?'current':'not-current'}}" ng-click="show=4">
+              <div class="color yellow"></div><div class="text">Semantic Association</div></a>
+              </li>
+            <li class="title">SCORING</li>
+            <li class="test_howtouse1"><a href="#" name="#tab5" id="{{show==5?'current':'not-current'}}" ng-click="show=5">
+              <div class="color"></div><div class="text">Naming</div></a>
+              </li>
+            <li class="test_howtouse2"><a href="#" name="#tab6" id="{{show==6?'current':'not-current'}}" ng-click="show=6">
+              <div class="color green"></div><div class="text">Repetition</div></a>
+              </li>
+            <li class="test_howtouse3"><a href="#" name="#tab7" id="{{show==7?'current':'not-current'}}" ng-click="show=7">
+              <div class="color blue"></div><div class="text">Word Comprehension</div></a>
+              </li>
+            <li class="test_howtouse4"><a href="#" name="#tab8" id="{{show==8?'current':'not-current'}}" ng-click="show=8">
+              <div class="color yellow"></div><div class="text">Semantic Association</div></a>
+              </li>
+        </ul>
+
+        <div id="content" class="howtouse_color right-menu-content-scroll">
+            <div id="tab1" ng-if="show==1">
+                <div class="entering-test">
+                    <h3>Naming</h3>
+                    <p class="left_mar1">Introduce the test with the script provided.  For each item displayed, repeat the question "what is this called?" until the examinee is familiar with the instruction.</p>
+                    <p>Feedback should be provided on each of the practice items</p>
+                    <p class="left_mar">If correct: That's right, this is a [kangaroo / strawberry]</p>
+                    <p class="left_mar">If incorrect: This would be called a [kangaroo / strawberry]</p>
+                    <p class="left_mar1">No feedback should be given on answers for the test items.  </p>
+                    <p class="left_mar1">The following prompts may be given during the subtest: </p>
+                    <p class="left_mar">If an abbreviated version of the word is given (e.g. "bike", "PC"), then ask "what is the full name?"</p>
+                    <p class="left_mar">The response is vague or a description of the item is given (e.g. "oh that's a type of food"), then ask "can you give me the exact name?"</p>
+                    <p class="left_mar">If an alternative or colloquial version is given (e.g. "wireless"), then ask "do you know another word for that?" or "what is the formal name for that?"</p>
+                    <p class="left_mar">If the person grossly misperceives an item (e.g. Item 25 - tiara, some participants do not recognise that this is sitting on top of someone's head), then clarify (e.g. "this is on someone's head").</p>
+                    <p class="left_mar">If for Item 28, the person says "robber", clarify, "but what is the name of the thing he is wearing?"</p>
+                    <p class="left_mar1">Where feasible, administer all items of the test.  If however, the examinee has failed more than 6 consecutive items and appears distressed, then discontinue the test by using a one-finger swipe up or down.  The examiner is alerted that 6 consecutive items have been failed  when the item number is highlighted with a grey box.</p>
+                    <p class="left_mar1">For each item, use the gestures to indicate whether the responses are correct, incorrect, or uncertain.  Responses are audio recorded and can be reviewed after testing via the Activity Log, if required.</p>
+                </div>
+            </div>
+            <div id="tab2" ng-if="show==2">
+                <div class="entering-test">
+                    <h3>Repetition</h3>
+                    <p class="left_mar1">Introduce the test with the script provided.  For each item, play the sound recording, and if required repeat the question "Now you say...[word]".</p>
+                    <p class="left_mar1">Common alternative pronunciations are accepted, however where possible, the person should be encouraged to model the pronunciation provided in the recorded version of each word.</p>
+                    <p class="left_mar1">For practice items, it is not necessary for the person to be able to correctly repeat the word.  The practice items are to ensure understanding of the task instruction.</p>
+                    <p class="left_mar1">The first attempt to repeat the word is the response scored.  If there is no attempt to say the word, or if before attempting to say the word the examinee asks for the word again, the word can be replayed.</p>
+                    <p class="left_mar1">Administer all items of the test. However, you may wish to discontinue after 6 consecutive  errors if the examinee appears distressed.</p>
+                    <p class="left_mar1">For each item, use the gestures to indicate whether the responses are correct, incorrect, or uncertain.  Responses are audio recorded and can be reviewed after testing via the Activity Log, if required.</p>
+                </div>
+            </div>
+            <div id="tab3" ng-if="show==3">
+                <div class="entering-test">
+                    <h3>Word comprehension</h3>
+                    <p class="left_mar1">Introduce the test with the script provided.  For each item, ask "Where is the..." and play the sound recording. Once the examinee is familiar with the instruction, simply play the sound recording when displaying the item.</p>
+                    <p>Feedback should be provided on each of the practice items</p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">If correct: That's right, this is a [kangaroo / strawberry]</p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">If incorrect, point to the correct item and say: This is the best answer for [kangaroo / strawberry]</p>
+                    <br/>
+                    <p>No feedback should be given on answers for the test items.  </p>
+                    <p class="left_mar1">The sound recording may be repeated as many times as necessary.</p>
+                    <p class="left_mar1">Once a response has been selected, the picture will be highlighted and will expand in size, so that the examinee can review the selection.  If necessary, the examinee can then select another response, without penalty.  Confirm when the examinee is satisfied with their response, and then swipe left with one-finger to advance to the next item.  After advancing to the next item, it is not possible for the examinee to go back and select another choice.
+                        If the person begins naming all the items on the page say: "yes, but where is the  [repeat word]?"
+                    </p>
+                    <p class="left_mar1">Where feasible, administer all items of the test.  If however, the examinee has failed more than 6 consecutive items and appears distressed, then discontinue the test by using a one-finger swipe up or down.  The examiner is alerted that 6 consecutive items have been failed when the item number is highlighted with a grey box.</p>
+                </div>
+            </div>
+            <div id="tab4" ng-if="show==4">
+                <div class="entering-test">
+                    <h3>Semantic Association</h3>
+                    <p class="left_mar1">Introduce the test with the script provided.  For each item, ask "Which one best goes with the [name the item]". Once the examinee is familiar with the instruction, simply display the item.</p>
+                    <p>Feedback should be provided on each of the practice items</p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">P1 if correct: That's right, the kangaroo goes with the Opera House because they are both Australian things</p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">P1 if incorrect: The best answer would be the Opera House because they are both Australian things </p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">P2 if correct: That's right, the strawberry goes with the cream because many people like to eat strawberries with cream</p>
+                    <p class="left_mar" style="padding: 2px 0px 0px 15px;">P2 if incorrect: The best answer would be the cream because many people like to eat strawberries with cream</p>
+                    <p class="left_mar1">No feedback should be given on answers for the test items.  </p>
+                    <p class="left_mar1">Once a response has been selected, the picture will be highlighted and will expand in size, so that the examinee can review the selection.  If necessary, the examinee can then select another response, without penalty.  Confirm when the examinee is satisfied with their response, and then swipe to the left with one-finger to advance to the next item.  After advancing to the next item, it is not possible for the examinee to go back and select another choice.</p>
+                    <p class="left_mar1">If the person points only to the top picture: "yes, but which one of these [motion to the 4 pictures below] does it go with?"</p>
+                    <p class="left_mar1">Where feasible, administer all items of the test.  If however, the examinee has failed more than 6 consecutive items and appears distressed, then discontinue the test by using a one-finger swipe up or down.  The examiner is alerted that 6 consecutive items have been failed when the item number is highlighted with a grey box.</p>
+                </div>
+            </div>
+            <div id="tab5" ng-if="show==5">
+                <div class="entering-test">
+                    <h3>Naming</h3>
+                    <p class="left_mar1">Score as correct if:</p>
+                    <p>The examinee clearly says the correct name.  This includes instances where the examinee self-corrects, without any feedback (e.g. "television...uh..no..computer!"). </p><br/>
+                    <p>The examinee produces all components of the word said, but with some slight distortion of phonemes (e.g. "stesascope" instead of stethoscope would be accepted; "stemascope" would be incorrect).</p>
+                    <p class="left_mar1">Score as incorrect if:</p>
+                    <p>The examinee gives a semantically related response (e.g. "letter" for envelope).</p>
+                    <p>Not all components of the word are said (e.g. "envel..." for envelope or "rh-n-sis" for rhinoceros).</p>
+                    <p>The examinee gives a word approximation (e.g. "stemascope" for stethoscope or "hippopegos" for hippopotamus).</p>
+                    <p>They were not administered due to the test being discontinued after 6 consecutive failures.</p>
+                    <p class="left_mar1">Items are ideally scored by the examiner during the administration of the test (i.e. when presenting each item).  A temporary "uncertain" option can, however, be selected if the examiner is unsure and needs to review the responses after testing is complete.</p>
+
+                </div>
+            </div>
+            <div id="tab6" ng-if="show==6">
+                <div class="entering-test">
+                    <h3>Repetition</h3>
+                    <p class="left_mar1">Score as correct if:</p>
+                    <p>All syllables are correctly pronounced and are done so without pauses between syllables/uneven delivery of syllables in a word, distortion in phonemes or clusters (e.g. "fl" or "gl"), or restarting due to articulation problems (indicating laboured speech e.g. stuttering on the first sound, self-corrected sounds). </p><br/>
+                    <p>The examinee adds an "-s" to the end of the word or leaves off an "-s" at the end of the word. Other common, learned pronunciations of the word are accepted as long as they conform to the above rules.
+                        In examinees who have English as a second language, minor variations due to accent are acceptable (e.g. hippopotamus = 'ippoptamus).
+                    </p>
+                    <p></p>
+                    <p class="left_mar1">Score as incorrect if:</p>
+                    <p>The examinee cannot say the word.</p>
+                    <p>The examinee must re-start the word in order to say it correctly (e.g. stuttering over first phoneme).</p>
+                    <p>The examinee uses the wrong phoneme in the word (e.g. "dande-iron" for dandelion).</p>
+                    <p>The examinee clearly segments the word or says some syllables slowly and others in a rush (e.g. "hip-po-pot-a-mus"; or "hip-po-potamus").</p>
+
+                    <p class="left_mar1">Items are ideally scored by the examiner during the administration of the test (i.e. when presenting each item).  A temporary "uncertain" option can, however, be selected if the examiner is unsure and needs to review the responses after testing is complete.</p>
+                </div>
+            </div>
+            <div id="tab7" ng-if="show==7">
+                <div class="entering-test">
+                    <h3>Word Comprehension</h3>
+                    <p class="left_mar1">Responses to the Word Comprehension and Semantic Association subtests are automatically scored through the app.</p>
+                    <p class="left_mar1">The examinee is scored as correct if the correct picture is selected (even if their reasoning is incorrect).  Only the final selection made for each item is scored (i.e. the examinee may initially select the wrong picture but if this is self-corrected, without feedback, then the response is considered correct). </p>
+                    <p class="left_mar1">Any items which are not administered due to the test being discontinued after 6 consecutive failures are considered incorrect.</p>
+
+                </div>
+            </div>
+            <div id="tab8" ng-if="show==8">
+                <div class="entering-test">
+                    <h3>Semantic Association</h3>
+                    <p class="left_mar1">Responses to the Word Comprehension and Semantic Association subtests are automatically scored through the app.</p>
+                    <p class="left_mar1">The examinee is scored as correct if the correct picture is selected (even if their reasoning is incorrect).  Only the final selection made for each item is scored (i.e. the examinee may initially select the wrong picture but if this is self-corrected, without feedback, then the response is considered correct). </p>
+                    <p class="left_mar1">Any items which are not administered due to the test being discontinued after 6 consecutive failures are considered incorrect.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ion-content>
+</ion-view>

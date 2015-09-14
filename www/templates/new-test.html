@@ -1,0 +1,47 @@
+<ion-view>
+
+<ion-content scroll='false'>
+  <div class="header-reg" >
+    <a class="back_arrow" ui-sref="/" style="margin-left:20px;"></a>
+    <h1>Register Participant</h1>
+  </div>
+  <div class="pane-parent">
+
+    <form novalidate name="$parent.testForm" ng-submit="go();">
+      <div class="assessment_home">
+          <div class="row reg-label">
+            <div class="col col-50 input-label">Participant ID:</div>
+            <div class="col col-50">
+              <input class="reg-input" 
+              type="text" ng-model="test.id" name="uId" required>
+            </div>
+          </div>
+          <div class="row reg-label">
+            <div class="col col-50 input-label">Participant DOB:</div>
+            <div class="col col-50">
+              <input class="reg-input"
+               max="2015-01-01" type="date" ng-model="test.dob" name="uDob" 
+                required>
+            </div>
+          </div>
+          <div class="row reg-label">
+            <div class="col col-50 input-label">Examiner Initials:</div>
+            <div class="col col-50">
+              <input class="reg-input"  type="text" ng-model="test.initials" capitalize name="uIni" required>
+            </div>
+          </div>
+          <div class="row reg-label">
+            <div class="col col-50 input-label">Date:</div>
+            <div class="col col-50">
+              <input id="dateTest" ng-change="check()" class="reg-input" type="date" ng-model="test.dateTest" name="uDt" required>
+            </div>
+          </div>
+      </div>
+      <div class="ali-mid">
+        <button class="button button-next"
+         type="submit">Next <i class="icon-right ion-arrow-right-a"></i></button>
+      </div>
+    </form>
+  </div>
+</ion-content>
+</ion-view>

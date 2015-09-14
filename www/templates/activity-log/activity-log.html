@@ -1,0 +1,58 @@
+<ion-view>
+  <ion-content>
+        <div class="left_home_bacl">
+            <div class="home_icon"> <a ui-sref="/" class="home_back_icon"></a> </div>
+        </div>
+        <div class="left_home_tests_menu">
+          <ul class="list">
+              <!--<li class="item" ng-class="{'activemenu':clickedDate==$index}"  ng-repeat="date in dates| orderBy:'toString()':true" ng-click="getTestList(date,$index)">
+                {{date|month}}
+              </li>-->
+              <li class="item" ng-class="{'activemenu':clickedDate==$index}"  ng-repeat="date in dates" ng-click="getTestList(date,$index)">
+                {{date|month}}
+              </li>
+          </ul>
+        </div>
+        <div class="left_home_tests_menu" id="patient_list">
+          <ul class="list">
+              <li class="item" ng-class="{'activemenu':clickedTest==$index}"  ng-repeat="test in selectedTest" ng-click="getTest(test.id,$index);">
+                <span style=""> Patient {{test.name}}</span>
+                 <span class="initials">{{test.doctor}}</span>
+              </li>
+          </ul>
+        </div>
+        <div class="left_home_patient">
+            <div class="top_header">
+                <div class="top_header_left">
+                    <div class="id_top_div" id="patient_dob">
+                        <h1>Participant ID: {{currentUser.name}}</h1><span>DOB: {{currentUser.dob|date:'dd MMM yyyy'}}</span>
+                    </div>
+                    <div class="id_top_div" id="patient_time">
+                        <h2>{{currentUser.doctor}}</h2><span>{{currentUser.created|date:'dd MMM yyyy, h:mm a'}}</span>
+                    </div>
+                </div>
+                <button class="button button-log-white" style="position: absolute;top: 3%;right: 2%;" ng-click="showPopup(currentUser.id);">delete</button>
+            </div>
+            <div class="bottom_div_activity" style="text-align: center;color: #0c4b64;">
+              <div class="row">
+                <div class="col" ui-sref="/activity-log-naming({id:currentUser.id})">
+                  <div ion-radial-progress data-start-time="30" data-percent="{{answers.naming}}" data-name="Naming"></div>
+                </div>
+                <div class="col" ui-sref="/activity-log-repetition({id:currentUser.id})">
+                   <div ion-radial-progress data-start-time="30" data-percent="{{answers.repetition}}" data-name="Repetition"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col" ui-sref="/activity-log-word({id:currentUser.id})">
+                    <div ion-radial-progress data-start-time="30" data-percent="{{answers.word}}" data-name="Word Comprehension"></div>
+                </div>
+                <div class="col" ui-sref="/activity-log-semantic({id:currentUser.id})">
+                    <div ion-radial-progress data-start-time="30" data-percent="{{answers.semantic}}" data-name="Semantic Association"></div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+        <script id="radial-progress.html" type="text/ng-template">  </script>
+  </ion-content>
+</ion-view>

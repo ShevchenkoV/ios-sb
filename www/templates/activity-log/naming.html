@@ -1,0 +1,101 @@
+
+<ion-view>
+  <ion-content scroll="false">
+  <div class="left_home_bacl">
+    <div class="home_icon"> <a ui-sref="/" class="home_back_icon"></a> </div>
+    <div class="home_icon"> <a ui-sref="/activity-log" class="goBack home_back_sart"></a> </div>
+</div>
+<div class="left_home_patient">
+    <div class="top_header">
+      <div class="top_header_left">
+          <div class="id_top_div">
+              <h1>Participant ID: {{current.name}}</h1>
+              <span>DOB: {{current.dob|date:'dd MMM yyyy'}}</span> </div>
+          <div class="id_top_div">
+              <h2>{{current.doctor}}</h2>
+              <span>{{current.created|date:'dd MMM yyyy, h:mm a'}}</span> </div>
+      </div>
+        <div class="top_header_right">
+          <!--  <a class="how-buttons-on" title="gmail"></a>
+            <a class="resume_test" title="resume_test"></a>-->
+            <button class="button button-log-white" ng-if="current.naming==0||current.naming==-1" ng-click="resume();">resume test</button>
+            <button class="button button-log-white" ng-click="mail();">export to email</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-20" style="text-align:center;">
+            <div ion-radial-progress data-start-time="30" data-percent="{{answers}}" data-name="Naming"></div>
+            <div class="log-rows-info">
+              <div class="row-log">
+                <div class="row-left-log">1-10</div>
+                <div class="row-divider" bars-check data-len="{{bars.first}}"></div>
+                <div class="row-right-log">{{bars.first}}</div>
+              </div>
+              <div class="row-log">
+                <div class="row-left-log">11-20</div>
+                <div class="row-divider" bars-check data-len="{{bars.second}}" style="width:50px;"></div>
+                <div class="row-right-log">{{bars.second}}</div>
+              </div>
+              <div class="row-log">
+                <div class="row-left-log">21-30</div>
+                <div class="row-divider" bars-check data-len="{{bars.third}}"></div>
+                <div class="row-right-log">{{bars.third}}</div>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+        <ul style="color:#0c4b64;">
+          <li style="line-height: 25px;margin-bottom: 10px;" ng-repeat="i in current.naming_arr|limitTo:10">
+            <div class="row">
+              <div class="col col-list col-10" style="text-align: right;white-space: nowrap;">{{$index+1}})</div>
+              <div class="col col-list col-20"><button ng-if="::i.res!==-1" class="button point-black-button button-dark ion-play" ng-click="play(i);"></button></div>
+              <div class="col col-list col-50">({{i.name}})</div>
+              <div class="col col-list" style="max-width:40px;"><div class="point-circle" ng-click="showPopup($index);" circle-check data-number={{i.res}}></div></div>
+              <div style="font-size: 25px;">{{i.modified}}</div>
+            </div>
+          </li>
+        </ul></div>
+        <div class="col">
+        <ul style="color:#0c4b64;">
+          <li style="line-height: 25px;margin-bottom: 10px;" ng-repeat="i in current.naming_arr| myFilter:10 :20">
+            <div class="row">
+              <div class="col col-list col-10" style="text-align: right;white-space: nowrap;">{{$index+11}})</div>
+              <div class="col col-list col-20"><button ng-if="::i.res!==-1" class="button point-black-button button-dark ion-play" ng-click="play(i);"></button></div>
+              <div class="col col-list col-50">({{i.name}})</div>
+              <div class="col col-list" style="max-width:40px;"><div class="point-circle" ng-click="showPopup($index+10);" circle-check data-number={{i.res}}></div></div>
+              <div style="font-size: 25px;">{{i.modified}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+      <ul style="color:#0c4b64;">
+        <li style="line-height: 25px;margin-bottom: 10px;" ng-repeat="i in current.naming_arr|myFilter:20:30">
+          <div class="row">
+            <div class="col col-list col-10" style="text-align: right;white-space: nowrap;">{{$index+21}})</div>
+            <div class="col col-list col-20"><button ng-if="::i.res!==-1" class="button point-black-button button-dark ion-play" ng-click="play(i);"></button></div>
+            <div class="col col-list col-50">({{i.name}})</div>
+            <div class="col col-list" style="max-width:40px;"><div class="point-circle" ng-click="showPopup($index+20);" circle-check data-number={{i.res}}></div></div>
+            <div style="font-size: 25px;">{{i.modified}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+</div>
+<script id="popTpl.html" type="text/ng-template">
+<div class="row" style="color:#0c4b64;font-size:25px;line-height:35px;">
+  <div class="col col-33" style="  display: flex;  align-self: center;">
+    <span>{{pos+1}})</span>
+    <div class="point-circle-popup" ng-click="popData.res=0" ng-class="{'active-pop-c':popData.res==0}">0</div>
+    <div class="point-circle-popup" ng-click="popData.res=1" ng-class="{'active-pop-c':popData.res==1}">1</div>
+  </div>
+  <div class="col col-offset-33 col-33">
+    <button class="button button-positive" style="  border-radius: 5px;  max-height: 35px;  font-size: 20px;  padding: 1px 15px;" ng-click="save(pos)">Save</button>
+    <button class="button button-positive" style="  border-radius: 5px;  max-height: 35px;  font-size: 20px;  padding: 1px 15px;" ng-click="close()">Close</button>
+  </div>
+</div>
+<textarea class="textarea-popup" ng-model="popData.comment" name="comment" placeholder="Comment"rows="3"></textarea>
+  </script>
+</ion-content>
+</ion-view>

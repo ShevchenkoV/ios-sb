@@ -1,0 +1,35 @@
+<ion-view>
+<ion-content scroll="false">
+  <ion-slide-box  show-pager="false" ng-init="disableSwipe()" active-slide="currentPointer" on-slide-changed="slideHasChanged($index)">
+    <ion-slide>
+          <div class="slide-fullscreen" ng-include src="'templates/naming/intro.html'"></div>
+    </ion-slide>
+    <ion-slide detect-gestures>
+          <div class="centered practice-image slide-fullscreen">
+            <h3 class="test-counter">Practice 1</h3>
+            <img style="max-height: 80%;" src="images/naming/kangaroo.jpg">
+          </div>
+    </ion-slide>
+    <ion-slide detect-gestures>
+          <div class="centered practice-image slide-fullscreen">
+            <h3 class="test-counter">Practice 2</h3>
+            <img style="max-height: 80%;" src="images/naming/strawberry.jpg">
+          </div>
+    </ion-slide>
+    <ion-slide>
+          <div on-tap="nextSlide()" on-swipe-left="nextSlide()" class="slide-fullscreen" ng-include src="'templates/test-begin.html'"></div>
+    </ion-slide>
+  <ion-slide detect-gestures ng-repeat="image in ::imageList">
+            <div>&nbsp;</div>
+        <div class="centered practice-image slide-fullscreen">
+          <h3 class="test-counter" ng-class="greyCounter>6?'greybox':''">{{$index+1}}</h3>
+          <img style="max-height: 80%;" ng-src="images/naming/{{image.name}}.jpg">
+        </div>
+  </ion-slide>
+  <ion-slide>
+        <div ng-if="currentPointer>=30" on-tap="exit()" on-swipe="exit()" class="slide-fullscreen" ng-include src="'templates/test-end.html'"></div>
+  </ion-slide>
+</ion-slide-box>
+
+</ion-content>
+</ion-view>

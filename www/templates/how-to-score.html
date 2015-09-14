@@ -1,0 +1,32 @@
+<ion-view>
+<ion-content scroll="false" on-swipe-left="onSwipeLeft()">
+  <div class="header-reg">
+    <button class="button icon-left ion-arrow-left-a button-clear" style="font-size: 25px;" ui-sref="/test-home">Tests</button>
+    <h1>Test Assessment</h1>
+  </div>
+  <div class="pane-parent-percent ">
+      <div class="row row-gesture">
+        <div class="col col-offset-20 col-10 col-img-gesture"><img style="padding-left:20%;" src="images/short-left.png"></div>
+        <div class="col col-center col-test-gesture">Correct, Score = 1</div>
+      </div>
+      <div class="row row-gesture">
+        <div class="col col-offset-20 col-10 col-img-gesture"><img src="images/long-left.png"></div>
+        <div class="col col-center col-test-gesture">Incorrect, Score = 0</div>
+      </div>
+      <div class="row row-gesture">
+        <div class="col col-offset-20 col-10 col-img-gesture"><img src="images/double-left.png"></div>
+        <div class="col col-center col-test-gesture">Review later, no Score</div>
+      </div>
+      <div class="row row-gesture">
+        <div class="col col-offset-20 col-10 col-img-gesture"><img src="images/up-down.png"></div>
+        <div class="col col-center col-test-gesture">Terminate Test (complete)</div>
+      </div>
+      <div class="row row-gesture">
+        <div class="col col-offset-20 col-10 col-img-gesture"><img src="images/double-up-down.png"></div>
+        <div class="col col-center col-test-gesture">Terminate Test (incomplete)</div>
+      </div>
+    <button class="button button-light howtoscore_close" ui-sref="/test-home">Close</button>
+    <button class="button button-light howtoscore_practice" ui-sref="/practice">Practice</button>
+  </div>
+</ion-content>
+</ion-view>
